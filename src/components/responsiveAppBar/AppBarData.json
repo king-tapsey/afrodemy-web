@@ -1,0 +1,49 @@
+[
+    {
+        "id": 1,
+        "name": "HOME",
+        "routesTo": "/",
+        "children": null
+    },
+    {
+        "id": 2,
+        "name": "BLOG",
+        "routesTo": "/blog",
+        "children": null
+    },
+    {
+        "id": 3,
+        "name": "COURSES",
+        "routesTo": "/courses",
+        "children": null
+    },
+    {
+        "id": 4,
+        "name": "FLEX CENTER",
+        "routesTo": "/flex-center",
+        "children": null
+    },
+    {
+        "id": 5,
+        "name": "FORUM",
+        "routesTo": "/main-forum",
+        "children": null
+    },
+    {
+        "id": 6,
+        "name": "POLICY",
+        "routesTo": "/policies",
+        "children": [
+            {
+                "name": "PRIVACY POLICY",
+                "routesTo": "/policies/privacy-policy",
+                "children": null
+            },
+            {
+                "name": "COOKIE POLICY",
+                "routesTo": "/policies/cookie-policy",
+                "children": null
+            }
+        ]
+    }
+]

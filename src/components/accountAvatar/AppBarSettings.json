@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "name": "Account",
+        "routesTo": "/profile"
+    },
+    {
+        "id": 2,
+        "name": "Subscription",
+        "routesTo": "/subscription"
+    },
+    {
+        "id": 3,
+        "name": "Logout",
+        "routesTo": "/logout"
+    }
+]
