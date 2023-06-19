@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { EditorState } from 'draft-js'
 import { Editor } from 'react-draft-wysiwyg'
-import { Box, CssBaseline, TextField, createStyles, makeStyles } from '@mui/material'
+import { Box, CssBaseline, TextField, Typography, createStyles, makeStyles, Divider } from '@mui/material'
 
 const useStyles = makeStyles((theme) =>
     createStyles({
@@ -34,26 +34,42 @@ export default function ArticleWriter() {
     const handleTitleChange = (event) => (
         setTitle(event.target.value)
     )
+    const handleSave = () => (
+        //TODO: send post request to server
+    )
     const classes = useStyles()
 
     return (
         <>
-            <Box>
-                <CssBaseline />
-                <TextField 
-                    value={title} 
-                    onChange={handleTitleChange} 
-                    id='title-bar' 
-                    label='Title' 
-                    variant='standard' 
-                />
-                <Editor
-                    editorState={editorState}
-                    onEditorStateChange={setEditorState}
-                    wrapperClassName={classes.wrapperClass}
-                    editorClassName={classes.editorClass}
-                    toolbarClassName={classes.toolbarClass}
-                />
+            <CssBaseline />
+            <Box display='inline'>
+                <Box display='block'>
+                    <Box display='inline-flex'>
+                        <Typography variant='h2' flexGrow={1}>Afrocodemy Writer</Typography>
+                        <Button onClick={handleSave}>
+                            Save
+                        </Button>
+                    </Box>
+                    <Divider />
+                    <Box>
+                        <TextField 
+                            value={title} 
+                            onChange={handleTitleChange} 
+                            id='title-bar' 
+                            label='Title' 
+                            variant='standard' 
+                        />
+                        <Editor
+                            editorState={editorState}
+                            onEditorStateChange={setEditorState}
+                            wrapperClassName={classes.wrapperClass}
+                            editorClassName={classes.editorClass}
+                            toolbarClassName={classes.toolbarClass}
+                        />
+                    </Box>
+                </Box>
+                <Divider orientation='vertical' variant='middle' />
+                
             </Box>
         </>
     )

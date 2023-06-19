@@ -9,8 +9,6 @@ export default function ForumAnswer({ answer }) {
     const [downVote, setDownVote] = useState(false)
     const [commentText, setCommentText] = useState('')
 
-    const answerAcceptedText = `This answer was accepted as the best answer by the question owner on ${answer.acceptedDate}`
-
     const handleUpVoteClick = () => {
         //TODO
     }
@@ -48,7 +46,7 @@ export default function ForumAnswer({ answer }) {
                         </IconButton>
                     </Tooltip>
                     <Tooltip
-                        title={answerAcceptedText}
+                        title={`This answer was accepted as the best answer by the question owner on ${answer.acceptedDate}`}
                         placement='right'
                         arrow
                     >

@@ -1,5 +1,6 @@
 import { BottomNavigation, BottomNavigationAction } from '@mui/material'
 import { useState } from 'react'
+import {BrowserRouter as Router} from 'react-router-dom'
 
 export default function BottomNav({ navElements }) {
     const [value, setValue] = useState(navElements[0].value)
@@ -15,7 +16,7 @@ export default function BottomNav({ navElements }) {
                     label={navElement.label}
                     value={navElement.value}
                     icon={<navElement.icon />}
-                    on
+                    LinkComponent={Router} href={navElement.linkTo}
                 />
             ))}
         </BottomNavigation>
